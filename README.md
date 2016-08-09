@@ -1,6 +1,6 @@
 Wowza Piwik Tracker
 ================
-This is a module for [![Wowza Streaming Engine v. 4.x] (https://www.wowza.com/)] that sends stats to [![Piwik] (https://piwik.org/)].
+This is a module for [Wowza Streaming Engine v. 4.x] (https://www.wowza.com/) that sends stats to [Piwik] (https://piwik.org/).
 
 This project can be compiled with Eclipse with the Wowza Development kit installed.
 
