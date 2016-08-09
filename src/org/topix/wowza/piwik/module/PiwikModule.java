@@ -236,7 +236,7 @@ public class PiwikModule extends ModuleBase {
 			
 			// track session ID in connection map
 			String sessionId=String.valueOf(stream.getClientId());
-			setConnectionMap(sessionId);
+			// setConnectionMap(sessionId);
 
 		}
 
@@ -372,7 +372,7 @@ public class PiwikModule extends ModuleBase {
 			
 			// track session ID in connection map
 			String sessionId=rtspSession.getSessionId();
-			setConnectionMap(sessionId);
+			// setConnectionMap(sessionId);
 
 
 		}
@@ -620,7 +620,9 @@ public class PiwikModule extends ModuleBase {
 		// check if there is an active connection for the same session ID
 		// if there is already an active connection then add the datatransfer and playtime counters to the connection map
 		// if there is no active connection for the same session ID get the total info and send data to piwik
-		long[] consolidatedData = getConnectionMap(sessionId, dataoutBytes, runningSec);
+		// long[] consolidatedData = getConnectionMap(sessionId, dataoutBytes, runningSec);
+		long[] consolidatedData;
+		consolidatedData[0] = 0;
 		
 		if (debug)
 			logger.info("piwikmodule: got connectionmap for session ID " + sessionId + ", conn count=" + consolidatedData[0] + " data=" + consolidatedData[1] + " time=" + consolidatedData[2]);
@@ -635,8 +637,9 @@ public class PiwikModule extends ModuleBase {
 		} else {
 			// there are no other connections for the current session ID
 			// update datatransferred and playtime using the consolidated data and send data to piwik
-			dataoutBytes=consolidatedData[1];
-			runningSec=consolidatedData[2];
+			// dataoutBytes=consolidatedData[1];
+			// runningSec=consolidatedData[2];
+			
 			if (dataoutBytes > 0) {
 				
 				IApplication app = appInstance.getApplication();
